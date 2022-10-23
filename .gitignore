@@ -1,0 +1,6 @@
+node_modules
+
+# move to global gitignore
+.DS_Store
+Thumbs.db
+.vscode
