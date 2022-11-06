@@ -20,7 +20,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5500:5432'
+      - '127.0.0.1:5500:5432'
     volumes:
       - "./volumes/postgres:/var/lib/postgresql/data"
 
@@ -33,4 +33,4 @@ services:
     depends_on:
       - menu-api-postgres
     ports:
-      - '4000:3000'
+      - '127.0.0.1:4000:3000'
