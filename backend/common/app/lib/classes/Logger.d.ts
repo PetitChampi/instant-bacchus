@@ -1,10 +1,6 @@
 declare class Logger {
     static OUTPUT_MODE: string;
-    static CHALK: {
-        blue: (a: string) => string;
-        cyan: (b: string) => string;
-        white: (c: string) => string;
-    };
+    static CHALK: Record<string, ((v: string) => string)>;
     static from(context?: string, method?: string): Logger;
     private readonly _context;
     private readonly _method;
