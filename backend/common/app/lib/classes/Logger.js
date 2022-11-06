@@ -29,8 +29,8 @@ class Logger {
 Logger.OUTPUT_MODE = ((_a = process.env.LOGGER_OUTPUT_MODE) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || `text`;
 // static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
 Logger.CHALK = {
-    blue: (a) => a,
-    cyan: (b) => b,
-    white: (c) => c
+    blue: (param) => param,
+    cyan: (param) => param,
+    white: (param) => param
 };
 export default Logger;

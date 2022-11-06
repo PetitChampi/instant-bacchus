@@ -7,10 +7,10 @@ class Logger {
 
   // static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
 
-  static CHALK: Record<string, ((v: string) => string)> = {
-    blue: (a: string): string => a,
-    cyan: (b: string): string => b,
-    white: (c: string): string => c
+  static CHALK: Record<string, ((param: string) => string)> = {
+    blue: (param: string): string => param,
+    cyan: (param: string): string => param,
+    white: (param: string): string => param
   }
 
   static from(context = 'unknown', method = 'unknown') {
