@@ -1,6 +1,5 @@
 declare class Logger {
     static OUTPUT_MODE: string;
-    static CHALK: Record<string, ((param: string) => string)>;
     static from(context?: string, method?: string): Logger;
     private readonly _context;
     private readonly _method;
