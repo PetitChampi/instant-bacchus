@@ -1,9 +1,14 @@
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from "uuid";
 
 class Drink {
   static from() {
     return new Drink();
   }
+
+  public drinkId: string;
+  public name: string;
+  public price: number;
+  public calories: number;
 
   constructor() {
     this.drinkId = uuidv4();
@@ -12,20 +17,20 @@ class Drink {
     this.calories = 0;
   }
 
-  setName(name) {
+  setName(name: string) {
     this.name = name;
     return this;
   }
 
-  setPrice(price) {
+  setPrice(price: number) {
     this.price = price;
     return this;
   }
 
-  setCalories(calories) {
+  setCalories(calories: number) {
     this.calories = calories;
     return this;
   }
 }
 
-module.exports = Drink;
+export default Drink;

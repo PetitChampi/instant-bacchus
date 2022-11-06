@@ -1,4 +1,4 @@
-const Chalk = require(`chalk`);
+import Chalk from "chalk";
 
 class Logger {
 
@@ -11,28 +11,31 @@ class Logger {
     return new Logger(context, method);
   }
 
-  constructor(context = 'unknown', method = 'unknown') {
+  private readonly _context: string;
+  private readonly _method: string;
+
+  constructor(context: string = 'unknown', method: string = 'unknown') {
     this._context = context;
     this._method = method;
   }
 
-  setMethod(method) {
+  setMethod(method: string) {
     return new Logger(
       this._context,
       method
     );
   }
 
-  log(logline) {
+  log(logline: string) {
 
-    const logValues = {
+    const logValues: Record<string, string> = {
       context: Logger.CHALK.blue(this._context),
       method: Logger.CHALK.cyan(this._method),
       logline: Logger.CHALK.white(logline)
     };
 
     // each value is a fn declaration so that it only runs when called
-    const logOutputs = {
+    const logOutputs: Record<string, () => string> = {
       text: () => Object.values(logValues).join(" - "),
       json: () => JSON.stringify(logValues)
     };
@@ -41,4 +44,4 @@ class Logger {
   }
 }
 
-module.exports = Logger;
+export default Logger;

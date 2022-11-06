@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "outDir": "./lib",
+    "strict": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+      "@/src/*": [
+        "src/*"
+      ],
+      "@/tests/*": [
+        "tests/*"
+      ]
+    },
+    "lib": [
+      "ES5",
+      "ES2015",
+      "ES2016",
+      "ES2017",
+      "ES2018",
+      "ES2019",
+      "ES2020",
+      "ES2021",
+      "ES2022",
+      "DOM",
+      "WebWorker",
+      "ScriptHost"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
+  },
+  "compileOnSave": true,
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
