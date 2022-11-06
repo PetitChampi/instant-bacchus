@@ -1,7 +1,9 @@
-import { v4 as uuidv4 } from "uuid";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const uuid_1 = require("uuid");
 class Drink {
     constructor() {
-        this.drinkId = uuidv4();
+        this.drinkId = (0, uuid_1.v4)();
         this.name = ``;
         this.price = 0;
         this.calories = 0;
@@ -22,4 +24,4 @@ class Drink {
         return this;
     }
 }
-export default Drink;
+exports.default = Drink;

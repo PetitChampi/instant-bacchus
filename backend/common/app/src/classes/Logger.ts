@@ -1,17 +1,11 @@
-// import Chalk from "chalk";
+import Chalk from "chalk";
 
 class Logger {
 
   // defining logger output mode: json/text (text for local dev & json for prod)
   static OUTPUT_MODE = process.env.LOGGER_OUTPUT_MODE?.toLowerCase() || `text`;
 
-  // static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
-
-  // static CHALK: Record<string, ((param: string) => string)> = {
-  //   blue: (param: string): string => param,
-  //   cyan: (param: string): string => param,
-  //   white: (param: string): string => param
-  // }
+  static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
   
   static from(context: string = 'unknown', method: string = 'unknown') {
     return new Logger(context, method);
@@ -35,13 +29,9 @@ class Logger {
   log(logline: string) {
 
     const logValues: Record<string, string> = {
-      context: this._context,
-      method: this._method,
-      logline: logline
-
-      // context: Logger.CHALK.blue(this._context),
-      // method: Logger.CHALK.cyan(this._method),
-      // logline: Logger.CHALK.white(logline)
+      context: Logger.CHALK.blue(this._context),
+      method: Logger.CHALK.cyan(this._method),
+      logline: Logger.CHALK.white(logline)
     };
 
     // each value is a fn declaration so that it only runs when called

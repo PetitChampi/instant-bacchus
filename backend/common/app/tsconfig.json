@@ -11,6 +11,7 @@
     "declaration": true,
     "baseUrl": ".",
     "moduleResolution": "node",
+    "module": "commonjs",
     "paths": {
       "@/src/*": [
         "src/*"

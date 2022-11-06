@@ -1,4 +1,17 @@
 services:
+  npm_registry:
+    container_name: menu-api-registry
+    image: verdaccio/verdaccio
+    restart: always
+    domainname: "npm-registry.local"
+    user: "501"
+    ports:
+      - "127.0.0.1:4873:4873"
+    volumes:
+      - "./volumes/npm-registry/conf:/verdaccio/conf"
+      - "./volumes/npm-registry/storage:/verdaccio/storage"
+      - "./volumes/npm-registry/plugins:/verdaccio/plugins"
+
   menu-api-postgres:
     container_name: menu-api-postgres
     image: postgres:14.1-alpine
@@ -9,7 +22,7 @@ services:
     ports:
       - '5500:5432'
     volumes:
-      - db:/var/lib/postgresql/data
+      - "./volumes/postgres:/var/lib/postgresql/data"
 
   menu-api:
     container_name: menu-api
@@ -21,7 +34,3 @@ services:
       - menu-api-postgres
     ports:
       - '4000:3000'
-
-volumes:
-  db:
-    driver: local
