@@ -12,8 +12,8 @@ class Logger {
   //   cyan: (param: string): string => param,
   //   white: (param: string): string => param
   // }
-
-  static from(context = 'unknown', method = 'unknown') {
+  
+  static from(context: string = 'unknown', method: string = 'unknown') {
     return new Logger(context, method);
   }
 

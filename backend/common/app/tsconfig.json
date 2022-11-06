@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "target": "ES6",
     "outDir": "./lib",
-    "strict": true,
+    "strict": false,
     "declaration": true,
     "baseUrl": ".",
     "moduleResolution": "node",
