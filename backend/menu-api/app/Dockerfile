@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY ${PWD} /app/
 
-# RUN npm install
-
+RUN npm install
+ 
 ENTRYPOINT [ "node", "/app/src/index.js" ]
