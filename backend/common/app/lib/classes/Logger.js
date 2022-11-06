@@ -1,5 +1,5 @@
+// import Chalk from "chalk";
 var _a;
-import Chalk from "chalk";
 class Logger {
     constructor(context = 'unknown', method = 'unknown') {
         this._context = context;
@@ -27,5 +27,10 @@ class Logger {
 }
 // defining logger output mode: json/text (text for local dev & json for prod)
 Logger.OUTPUT_MODE = ((_a = process.env.LOGGER_OUTPUT_MODE) === null || _a === void 0 ? void 0 : _a.toLowerCase()) || `text`;
-Logger.CHALK = new Chalk.Instance({ level: Logger.OUTPUT_MODE === `text` ? 3 : 0 });
+// static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
+Logger.CHALK = {
+    blue: (a) => a,
+    cyan: (b) => b,
+    white: (c) => c
+};
 export default Logger;
