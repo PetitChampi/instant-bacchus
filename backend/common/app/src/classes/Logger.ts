@@ -1,11 +1,17 @@
-import Chalk from "chalk";
+// import Chalk from "chalk";
 
 class Logger {
 
   // defining logger output mode: json/text (text for local dev & json for prod)
   static OUTPUT_MODE = process.env.LOGGER_OUTPUT_MODE?.toLowerCase() || `text`;
 
-  static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
+  // static CHALK = new Chalk.Instance({level: Logger.OUTPUT_MODE === `text` ? 3 : 0});
+
+  static CHALK = {
+    blue: (a: string) => a,
+    cyan: (b: string) => b,
+    white: (c: string) => c
+  }
 
   static from(context = 'unknown', method = 'unknown') {
     return new Logger(context, method);
