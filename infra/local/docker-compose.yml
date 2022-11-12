@@ -30,6 +30,8 @@ services:
       context: ../../backend/menu-api/app
       dockerfile: Dockerfile
     image: menu-api
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@menu-api-postgres:5432/postgres
     depends_on:
       - menu-api-postgres
     ports:
