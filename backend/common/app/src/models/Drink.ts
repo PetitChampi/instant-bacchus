@@ -5,13 +5,13 @@ class Drink {
     return new Drink();
   }
 
-  public drinkId: string;
+  public id: string;
   public name: string;
   public price: number;
   public calories: number;
 
   constructor() {
-    this.drinkId = uuidv4();
+    this.id = uuidv4();
     this.name = ``;
     this.price = 0;
     this.calories = 0;

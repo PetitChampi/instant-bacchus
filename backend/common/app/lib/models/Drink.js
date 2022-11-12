@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const uuid_1 = require("uuid");
 class Drink {
     constructor() {
-        this.drinkId = (0, uuid_1.v4)();
+        this.id = (0, uuid_1.v4)();
         this.name = ``;
         this.price = 0;
         this.calories = 0;

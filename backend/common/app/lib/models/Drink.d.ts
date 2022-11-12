@@ -1,6 +1,6 @@
 declare class Drink {
     static from(): Drink;
-    drinkId: string;
+    id: string;
     name: string;
     price: number;
     calories: number;

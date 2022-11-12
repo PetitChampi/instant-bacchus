@@ -6,7 +6,7 @@ class ExpressProcessManager implements ProcessManager {
   private _server: any;
 
   create() {
-    this._server = app.listen(3000);
+    this._server = app.listen(parseInt(process.env.SERVER_PORT || '3000', 10), "0.0.0.0");
     return Promise.resolve();
   }
 
