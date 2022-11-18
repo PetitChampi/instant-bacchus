@@ -1,0 +1,16 @@
+@import "../../style-variables.scss";
+
+.footer {
+  background-color: $colorPrimary;
+  color: $bodyBg;
+  text-align: center;
+  padding: 20px 30px;
+
+  &_text {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

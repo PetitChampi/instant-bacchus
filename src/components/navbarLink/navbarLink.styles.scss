@@ -1,0 +1,15 @@
+@import "../../style-variables.scss";
+
+.navbar_link {
+  font-size: 1.25rem;
+  background-color: rgba($bodyBg, 0.2);
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: border-color $hoverTransition;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $bodyBg;
+  }
+}
